@@ -1,3 +1,50 @@
+#1.- Ruta principal
+home:
+    path:       /
+    defaults:   { _controller: AppBundle:Default:index }
+    
+#2.- Login
+
+#3.- Productos
 listadoProductos:
     path:       /productos
-    defaults:   { _controller: AppBundle:Default:index }
+    defaults:    { _controller: AppBundle:Producto:listar }
+    
+producto:
+    path:       /producto/{id}
+    defaults:   { _controller: AppBundle:Producto:ver }
+    
+crearProducto:
+    path:       /nuevo-producto
+    defaults:   { _controller: AppBundle:Producto:crear }
+  
+actualizarProducto:
+    path:       /actualizar-producto/{id}
+    defaults:   { _controller: AppBundle:Producto:actualizar }
+    
+borrarProducto:
+    path:       /borrar-producto/{id}
+    defaults:   { _controller: AppBundle:Producto:borrar }
+    
+pujar:
+    path:       /pujar/{id}
+    defaults:   { _controller: AppBundle:Producto:pujar }
+    
+buscar:
+    path:       /buscar-producto/{tag}
+    defaults:   { _controller: AppBundle:Producto:buscar }
+    
+#4.- Usuarios
+verPerfil:
+    path:       /perfil
+    defaults:   { _controller: AppBundle:Usuario:perfil }
+    
+listadoUsuarios:
+    path:       /listarUsuarios
+    defaults:   { _controller: AppBundle:Usuarios:listar }
+    
+#5.- Contacto
+contacto:
+    path:       /contacto
+    defaults:   { _controller: AppBundle:Contacto:index }
+    
