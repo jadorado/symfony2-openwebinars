@@ -13,21 +13,21 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         
-        $em = $this->getDoctrine()->getManager();
+        /*$em = $this->getDoctrine()->getManager();
         
         $producto = new Producto();
-        $producto->setName("prueba");
+        $producto->setName("prueba");*/
         
         //$em->persist($producto);
         //$em->flush();
         
-        $repository = $this->getDoctrine()
+       /* $repository = $this->getDoctrine()
     ->getRepository('AppBundle:Producto');
         
         $query = $repository->createQueryBuilder('p')
     ->where('p.name = :nombre')
     ->setParameter('nombre', 'prueba2')
-    ->getQuery();
+    ->getQuery();*/
  
 //$products = $query->getResult();
 
