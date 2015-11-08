@@ -1,0 +1,32 @@
+<?php
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * 
+ * @ORM\Table(name="pujas")
+ */
+class Pujas {
+    
+    /**
+     * @ORM\Id
+     * 
+     * @ORM\Column(type="integer")
+     * 
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+    
+    /**
+     * @ORM\Column(type="datetime", nullable=false) 
+     */
+    protected $fecha;
+    
+    /**
+     * @ORM\Column(type="float", nullable=false)
+     */
+    protected $precio;
+  
+}

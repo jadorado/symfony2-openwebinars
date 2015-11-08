@@ -4,6 +4,19 @@ home:
     defaults:   { _controller: AppBundle:Default:index }
     
 #2.- Login
+login:
+    pattern:   /login
+    defaults:  { _controller: AppBundle:Seguridad:login }
+    
+login_check:
+    pattern:   /login_check
+
+logout:
+    path:       /logout
+    
+registro:
+    path:       /registro
+    defaults:  { _controller: AppBundle:Seguridad:registro }
 
 #3.- Productos
 listadoProductos:

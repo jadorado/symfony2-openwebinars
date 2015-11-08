@@ -246,38 +246,4 @@ class Productos {
     {
         return $this->vendedor;
     }
-
-    /**
-     * Add pujadore
-     *
-     * @param \AppBundle\Entity\Usuarios $pujadore
-     *
-     * @return Productos
-     */
-    public function addPujadore(\AppBundle\Entity\Usuarios $pujadore)
-    {
-        $this->pujadores[] = $pujadore;
-
-        return $this;
-    }
-
-    /**
-     * Remove pujadore
-     *
-     * @param \AppBundle\Entity\Usuarios $pujadore
-     */
-    public function removePujadore(\AppBundle\Entity\Usuarios $pujadore)
-    {
-        $this->pujadores->removeElement($pujadore);
-    }
-
-    /**
-     * Get pujadores
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPujadores()
-    {
-        return $this->pujadores;
-    }
 }

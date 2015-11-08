@@ -326,38 +326,4 @@ class Usuarios implements UserInterface, \Serializable{
         return $this->isActive;
     }
 
-
-    /**
-     * Add pujado
-     *
-     * @param \AppBundle\Entity\Productos $pujado
-     *
-     * @return Usuarios
-     */
-    public function addPujado(\AppBundle\Entity\Productos $pujado)
-    {
-        $this->pujados[] = $pujado;
-
-        return $this;
-    }
-
-    /**
-     * Remove pujado
-     *
-     * @param \AppBundle\Entity\Productos $pujado
-     */
-    public function removePujado(\AppBundle\Entity\Productos $pujado)
-    {
-        $this->pujados->removeElement($pujado);
-    }
-
-    /**
-     * Get pujados
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPujados()
-    {
-        return $this->pujados;
-    }
 }
