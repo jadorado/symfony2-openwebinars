@@ -61,3 +61,9 @@ contacto:
     path:       /contacto
     defaults:   { _controller: AppBundle:Contacto:index }
     
+#6.- Panel de administracion
+easy_admin_bundle:
+    #resource: "@EasyAdminBundle/Controller/"
+    resource: "@AppBundle/Controller/AdminController.php"
+    type:     annotation
+    prefix:   /admin

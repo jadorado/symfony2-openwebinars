@@ -16,8 +16,32 @@ class DefaultController extends Controller
         $array = [];
         $array['nombre'] = "Jose";
         
-        return $this->render('AppBundle:Seguridad:prueba.html.twig', $array);
+        //if (false === $this->get('security.context')->isGranted('ROLE_ADMIN')) 
         
+        //return $this->render('AppBundle:Seguridad:prueba.html.twig', $array);
+        
+        $usuario = $this->get('security.context')->getToken()->getUser();
+        
+        $emailService = $this->get('email');
+        
+        $subject = $this->getParameter('subject');
+        $from = "tienda@tienda.com";
+        $to = $usuario->getEmail();
+        $template = 'AppBundle:Templates:mail.html.twig';
+        $params['nombre'] = $usuario->getNombre();
+        
+        $emailService->enviarEmail($subject, $from, $to, $template, $params);
+        
+        
+        /*
+        $emailService = $this->get('email');
+        $email = [];                    
+        $email['from'] = $this->getParameter('param');                    
+        $email['to'] = "";            
+        $email['subject'] = "";                
+        $email['template'] = 'AppBundle:Templates:invitation.html.twig';
+        $emailService->sendEmail($email['subject'], $email['from'], $email['to'], $email['template'], $email);
+        */
         
         /*$array = [];
         $array['producto'] = $producto;
@@ -44,11 +68,15 @@ class DefaultController extends Controller
         $producto->setFecha($fecha);        
         $producto->setPeso(1000000);
         
+        $usuario = $this->get('security.context')->getToken()->getUser();
+        $producto->setVendedor($usuario);
+        
+        
      
         $em = $this->getDoctrine()->getManager();
         
         $em->persist($producto);
-        $em->flush();
+        $em->flush();*/
         
         
         /*$em = $this->getDoctrine()->getManager();

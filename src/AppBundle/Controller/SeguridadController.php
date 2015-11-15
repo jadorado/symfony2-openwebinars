@@ -48,6 +48,7 @@ class SeguridadController extends Controller
             $user->setEmail($request->request->get('usuarios')['email']);
             $user->setUsername($request->request->get('usuarios')['username']);
             
+
             $user->setNombre("pruebaNombre");
             $user->setApellido("pruebaApellido");
             $user->setCiudad("ciudad"); 

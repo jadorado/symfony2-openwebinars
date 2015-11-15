@@ -10,4 +10,23 @@
 
 {% block body %}
     Hola {{ nombre|upper }}
+    
+    <form action="{{ path('home') }}" method="post">
+        <fieldset>
+            <label for="mail"></label>
+            <input type="text" placeholder="Mail" name="mail" id="mail">
+            <label for="tipo"></label>
+            <select name="tipo" value="Tipo de entidad" id="tipo">
+              <option value="Entidad">Entidad</option>
+              <option value="Individuo">Individuo</option>
+            </select>
+        </fieldset>
+        
+        <fieldset>
+            <textarea name="mensaje" id="mensaje" placeholder="Mensaje"></textarea>
+            <p><input type="checkbox" name="condiciones"> Acepto las condiciones de uso</p>
+            <input type="submit" value="Enviar"> 
+        </fielset>
+    </form>
+    
 {% endblock %}
