@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="/assets/css/test.css">
 {% endblock %}
 
-{% block body %}
-    Hola {{ nombre|upper }}
-    
+{% block body %}       
     <form action="{{ path('home') }}" method="post">
         <fieldset>
             <label for="mail"></label>

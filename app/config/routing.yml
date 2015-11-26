@@ -23,6 +23,10 @@ listadoProductos:
     path:       /productos
     defaults:    { _controller: AppBundle:Producto:listar }
     
+misProductos:
+    path:       /mis-productos
+    defaults:    { _controller: AppBundle:Producto:misProductos }
+    
 producto:
     path:       /producto/{id}
     defaults:   { _controller: AppBundle:Producto:ver }

@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+      Crear productos
+{% endblock %} 
+
+{% block body %}   
+
+    <p>CREACIÓN DE PRODUCTOS</p>
+    
+    {% if( exito is defined ) %}
+        <p>Producto creado con éxito</p>
+    {% endif %}
+    
+    {% if( error is defined ) %}
+        <p>{{ error }}</p>
+    {% endif %}
+    
+    <form action="{{ path('crearProducto') }}" method="post">
+        <fieldset>
+            <label for="nombre">Nombre:</label>
+            <input type="text" placeholder="Nombre" name="nombre" id="nombre">
+            
+            <label for="descripcion">Descripcion:</label>
+            <input type="text" placeholder="Descripcion" name="descripcion" id="descripcion">
+            </br>
+            <label for="precio">Precio:</label>
+            <input type="number" placeholder="Precio" name="precio" id="precio">
+            
+            <label for="fin">Fecha de fin:</label>
+            <input type="date" placeholder="Fecha de fin" name="fin" id="fin">
+        </fieldset>
+        
+        <fieldset>
+            <input type="submit" value="Crear"> 
+        </fieldset>
+            
+    </form>
+    
+{% endblock %}

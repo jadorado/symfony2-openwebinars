@@ -14,15 +14,17 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         $array = [];
-        $array['nombre'] = "Jose";
-        
         //if (false === $this->get('security.context')->isGranted('ROLE_ADMIN')) 
-        
-        //return $this->render('AppBundle:Seguridad:prueba.html.twig', $array);
-        
+
         $usuario = $this->get('security.context')->getToken()->getUser();
         
-        $emailService = $this->get('email');
+        //$productosMangaer = $this->get('tienda.productos.manager');
+        
+        $array['nombre'] = $usuario->getNombre();        
+        
+        return $this->render('AppBundle:Main:principal.html.twig', $array);
+        
+        /*$emailService = $this->get('email');
         
         $subject = $this->getParameter('subject');
         $from = "tienda@tienda.com";
@@ -30,7 +32,7 @@ class DefaultController extends Controller
         $template = 'AppBundle:Templates:mail.html.twig';
         $params['nombre'] = $usuario->getNombre();
         
-        $emailService->enviarEmail($subject, $from, $to, $template, $params);
+        $emailService->enviarEmail($subject, $from, $to, $template, $params);*/
         
         
         /*
