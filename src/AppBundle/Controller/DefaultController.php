@@ -18,7 +18,13 @@ class DefaultController extends Controller
 
         $usuario = $this->get('security.context')->getToken()->getUser();
         
-        //$productosMangaer = $this->get('tienda.productos.manager');
+        //$productosManager = $this->get('tienda.productos.manager'); 
+        
+        $productosManager = $this->get('tienda.productos.manager');
+        
+        $productos = $productosManager->findByNombre('Coche');
+        
+        $array['productos'] = $productos;
         
         $array['nombre'] = $usuario->getNombre();        
         

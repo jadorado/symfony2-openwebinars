@@ -20,8 +20,8 @@ registro:
 
 #3.- Productos
 listadoProductos:
-    path:       /productos
-    defaults:    { _controller: AppBundle:Producto:listar }
+    path:       /productos/{pag}
+    defaults:    { _controller: AppBundle:Producto:listar, pag: 1 }
     
 misProductos:
     path:       /mis-productos

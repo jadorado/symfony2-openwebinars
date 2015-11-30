@@ -2,9 +2,25 @@
 # http://symfony.com/doc/current/book/service_container.html
 parameters:
     subject: "Nueva puja"
+    numeroProductos: 10 
+    paginacionProductos: 10 
+    tienda.productos.repository.class: AppBundle\Repository\ProductosRepository
+    tienda.productos.manager.class: AppBundle\Manager\ProductosManager    
+    
 
 services:
     email:
         class: AppBundle\Classes\Email
         arguments: ['@service_container']
-   
+        
+    tienda.productos.repository:
+        class: %tienda.productos.repository.class%
+        public: true
+        factory_service: doctrine.orm.entity_manager
+        factory_method: getRepository
+        arguments: [ AppBundle\Entity\Productos ]
+        
+    tienda.productos.manager:
+        class: %tienda.productos.manager.class%
+        arguments: [@tienda.productos.repository]        
+         

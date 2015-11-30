@@ -82,4 +82,9 @@ swiftmailer:
 easy_admin:
     entities:
         Usuarios:  AppBundle\Entity\Usuarios
+        Productos:  AppBundle\Entity\Productos
         
+#xsolve_cookie_acknowledgement:
+    #response_injection: true # default true
+    #template: custom_cookie_bar.html.twig # twig template name, default: XsolveCookieAcknowledgementBundle::cookie_acknowledgement_bar.html.twig
+       

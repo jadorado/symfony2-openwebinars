@@ -8,4 +8,10 @@
 
     ¡Hola {{ nombre|upper }}!
     
+    {% if productos is defined %}
+        {% for producto in productos %}
+            <p> El id del {{ producto.nombre }} es {{ producto.id }}.</p>
+        {% endfor %}
+    {% endif %}
+    
 {% endblock %}

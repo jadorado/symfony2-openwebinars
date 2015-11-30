@@ -49,9 +49,23 @@ class ProductoController extends Controller
         
     }
     
-    public function listarAction() {
+    public function listarAction($pag) {
+        $array = [];   
+        $productosManager = $this->get('tienda.productos.manager');
+        $paginacion = $this->getParameter('paginacionProductos');
+        $paginaActual = $pag;
         
+        $productos = $productosManager->all();
+        $numProductos = count($productos);
+        $pagMax = ceil($numProductos / $paginacion);
+        
+        echo $pagMax;
+        
+     
+        //$array['productos'] = 
+        
+        return $this->render('AppBundle:Productos:listarProductos.html.twig', $array);
     }
-   
+
    
 }

@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+      Listado de productos
+{% endblock %} 
+
+{% block body %}   
+    <p>Listado de productos:</p>
+    
+    {% if productos is defined %}
+        {% for producto in productos %}
+            <div>
+                {{ producto.nombre }}: {{ producto.descripcion }}
+                </br>
+                Precio: {{ producto.precio }}
+            </div>
+            <br/>
+        {% endfor %}    
+    {% endif %}    
+        
+{% endblock %}

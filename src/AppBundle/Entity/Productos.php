@@ -6,7 +6,7 @@ use AppBundle\Entity\Usuarios;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ProductosRepository")
  * 
  * @ORM\Table(name="productos")
  */
@@ -40,6 +40,11 @@ class Productos {
      * @ORM\Column(type="datetime", nullable=true)
      */
     protected $fecha;
+    
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    protected $fin;
     
     /**
      * @ORM\Column(type="float", nullable=true)
@@ -173,6 +178,30 @@ class Productos {
     public function getFecha()
     {
         return $this->fecha;
+    }
+    
+    /**
+     * Set fin
+     *
+     * @param \DateTime $fin
+     *
+     * @return Productos
+     */
+    public function setFin($fin)
+    {
+        $this->fin = $fin;
+
+        return $this;
+    }
+
+    /**
+     * Get fin
+     *
+     * @return \DateTime
+     */
+    public function getFin()
+    {
+        return $this->fin;
     }
 
     /**
